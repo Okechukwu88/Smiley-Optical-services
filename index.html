@@ -1,37 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Smiley Optical Services</title>
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="favicon.ico/manifest.json">
-  <meta name="msapplication-TileImage" content="favicon.ico.png">
-  <meta name="theme-color" content="#ffffff">
-
+  <title>Smiley Optical Services | Premium Eye Care</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Bootstrap 5 Bundle with Popper (recommended) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+9o1l5Y5nU3f5+cB8x0Wap3xY+VRt" crossorigin="anonymous"></script>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     :root {
       --primary: #25a65b;
@@ -42,9 +24,10 @@
       --dark: #212529;
       --gray: #6c757d;
       --light-gray: #e9ecef;
-      --transition: all 0.3s ease;
-      --shadow: 0 5px 15px rgba(0,0,0,0.1);
-      --shadow-hover: 0 8px 25px rgba(0,0,0,0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
+      --shadow-hover: 0 15px 30px rgba(0,0,0,0.15);
+      --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     }
     
     * {
@@ -57,14 +40,16 @@
       font-family: 'Poppins', sans-serif;
       color: var(--dark);
       background-color: #ffffff;
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
     
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1.3;
+      letter-spacing: -0.5px;
     }
     
     .text-primary {
@@ -72,7 +57,7 @@
     }
     
     .btn {
-      padding: 12px 28px;
+      padding: 14px 32px;
       border-radius: 50px;
       font-weight: 600;
       transition: var(--transition);
@@ -80,48 +65,70 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: rgba(255,255,255,0.2);
+      transition: width 0.5s ease;
+      z-index: -1;
+    }
+    
+    .btn:hover:before {
+      width: 100%;
     }
     
     .btn-primary {
-      background: var(--primary);
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      background: var(--gradient-primary);
       box-shadow: var(--shadow);
+      color: white;
     }
     
     .btn-primary:hover {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-      transform: translateY(-3px);
+      transform: translateY(-5px) scale(1.05);
       box-shadow: var(--shadow-hover);
     }
     
     .btn-outline-primary {
       border: 2px solid var(--primary);
       color: var(--primary);
+      background: transparent;
     }
     
     .btn-outline-primary:hover {
       background: var(--primary);
       color: white;
-      transform: translateY(-3px);
+      transform: translateY(-5px);
       box-shadow: var(--shadow-hover);
     }
     
     .section {
-      padding: 100px 0;
+      padding: 120px 0;
       position: relative;
     }
     
     .section-title {
       position: relative;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
       text-align: center;
     }
     
     .section-title h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 25px;
       position: relative;
       display: inline-block;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     
     .section-title h2:after {
@@ -130,14 +137,14 @@
       bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
+      width: 100px;
+      height: 5px;
+      background: var(--gradient-primary);
+      border-radius: 3px;
     }
     
     .section-title p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       max-width: 700px;
       margin: 0 auto;
       color: var(--gray);
@@ -145,16 +152,21 @@
     
     /* Navbar */
     .navbar {
-      padding: 20px 0;
+      padding: 22px 0;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
       transition: var(--transition);
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
       backdrop-filter: blur(10px);
+    }
+    
+    .navbar-scrolled {
+      padding: 15px 0;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     }
     
     .navbar-brand {
@@ -163,18 +175,20 @@
     }
     
     .navbar-brand span {
-      font-weight: 700;
+      font-weight: 900;
       color: var(--primary);
-      font-size: 1.4rem;
-      margin-left: 10px;
+      font-size: 1.5rem;
+      margin-left: 12px;
+      letter-spacing: -0.5px;
     }
     
     .nav-link {
-      font-weight: 500;
+      font-weight: 600;
       color: var(--dark);
       margin: 0 15px;
       position: relative;
       padding: 8px 0 !important;
+      transition: var(--transition);
     }
     
     .nav-link:after {
@@ -183,9 +197,10 @@
       bottom: 0;
       left: 0;
       width: 0;
-      height: 2px;
+      height: 3px;
       background: var(--primary);
       transition: var(--transition);
+      border-radius: 2px;
     }
     
     .nav-link:hover:after,
@@ -196,7 +211,8 @@
     .navbar-toggler {
       border: none;
       padding: 0;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      color: var(--primary);
     }
     
     .navbar-toggler:focus {
@@ -206,8 +222,8 @@
     /* Hero Section */
     .hero {
       height: 100vh;
-      min-height: 800px;
-      background: linear-gradient(135deg, rgba(37, 166, 91, 0.1) 0%, rgba(44, 125, 247, 0.05) 100%);
+      min-height: 850px;
+      background: linear-gradient(135deg, rgba(37, 166, 91, 0.08) 0%, rgba(44, 125, 247, 0.05) 100%);
       display: flex;
       align-items: center;
       position: relative;
@@ -220,56 +236,86 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 50%;
+      width: 55%;
       height: 100%;
-      background: url('assets/img/gallery/hero-bg.png') no-repeat center center;
-      background-size: cover;
-      opacity: 0.15;
+      background: linear-gradient(45deg, rgba(37, 166, 91, 0.05), rgba(44, 125, 247, 0.03));
+      opacity: 0.8;
+      z-index: 0;
     }
     
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.2s forwards;
+    }
+    
+    @keyframes fadeUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
     
     .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      line-height: 1.2;
+      font-size: 4rem;
+      margin-bottom: 25px;
+      line-height: 1.15;
     }
     
     .hero h1 span {
-      color: var(--primary);
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       position: relative;
+      display: inline-block;
     }
     
     .hero h1 span:after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: 5px;
       left: 0;
       width: 100%;
-      height: 8px;
-      background: rgba(37, 166, 91, 0.3);
+      height: 10px;
+      background: rgba(37, 166, 91, 0.15);
       z-index: -1;
+      border-radius: 5px;
     }
     
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       max-width: 600px;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
       color: var(--gray);
     }
     
     .hero-img {
       position: relative;
-      animation: float 6s ease-in-out infinite;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.4s forwards;
     }
     
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
+    .hero-img:before {
+      content: '';
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      top: -10%;
+      left: -10%;
+      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+      opacity: 0.1;
+      z-index: -1;
+      border-radius: 50%;
+      animation: pulse 8s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.1; }
+      50% { transform: scale(1.05); opacity: 0.15; }
+      100% { transform: scale(0.95); opacity: 0.1; }
     }
     
     /* Stats */
@@ -282,42 +328,67 @@
     .stat-item {
       text-align: center;
       background: white;
-      padding: 25px;
-      border-radius: 15px;
+      padding: 30px;
+      border-radius: 20px;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      transform: translateY(0);
     }
     
     .stat-item:hover {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
       box-shadow: var(--shadow-hover);
     }
     
     .stat-item i {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: var(--primary);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      background: rgba(37, 166, 91, 0.1);
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 25px;
     }
     
     .stat-item h3 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 5px;
       color: var(--primary);
     }
     
     .stat-item p {
       margin-bottom: 0;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
     
-    /* Departments */
-    .departments {
+    /* Services */
+    .services {
       background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+      position: relative;
+      overflow: hidden;
     }
     
-    .dept-card {
+    .services:before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: url('assets/img/gallery/bg-pattern.png') no-repeat;
+      background-size: contain;
+      opacity: 0.05;
+      z-index: 0;
+    }
+    
+    .service-card {
       background: white;
-      border-radius: 15px;
+      border-radius: 20px;
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
@@ -325,79 +396,68 @@
       text-align: center;
       position: relative;
       z-index: 1;
+      padding: 40px 30px;
+      transform: translateY(0);
     }
     
-    .dept-card:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 0;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      z-index: -1;
-      transition: var(--transition);
-      opacity: 0.9;
-    }
-    
-    .dept-card:hover {
-      transform: translateY(-10px);
+    .service-card:hover {
+      transform: translateY(-15px);
       box-shadow: var(--shadow-hover);
+      background: var(--gradient-primary);
     }
     
-    .dept-card:hover:before {
-      height: 100%;
+    .service-card:hover .service-icon {
+      transform: scale(1.15) rotate(5deg);
+      background: white;
+      color: var(--primary);
     }
     
-    .dept-card:hover .dept-icon {
-      transform: scale(1.1);
-      filter: brightness(0) invert(1);
-    }
-    
-    .dept-card:hover .dept-title,
-    .dept-card:hover .dept-content p {
+    .service-card:hover .service-title,
+    .service-card:hover .service-content p {
       color: white;
     }
     
-    .dept-icon {
-      width: 80px;
-      height: 80px;
-      margin: 30px auto 20px;
+    .service-card:hover .service-content p {
+      opacity: 0.9;
+    }
+    
+    .service-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 25px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(37, 166, 91, 0.1);
-      border-radius: 50%;
+      border-radius: 20px;
       transition: var(--transition);
+      font-size: 2.5rem;
+      color: var(--primary);
     }
     
-    .dept-icon img {
-      width: 40px;
-      height: 40px;
-    }
-    
-    .dept-title {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
       color: var(--dark);
       transition: var(--transition);
     }
     
-    .dept-content {
-      padding: 0 20px 30px;
+    .service-content {
+      padding: 0 10px;
     }
     
-    .dept-content p {
+    .service-content p {
       transition: var(--transition);
       color: var(--gray);
     }
     
     /* Eye Care */
     .eye-care {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      background: var(--gradient-primary);
       color: white;
       position: relative;
       overflow: hidden;
+      padding: 140px 0;
     }
     
     .eye-care:before {
@@ -405,81 +465,170 @@
       position: absolute;
       top: -100px;
       right: -100px;
-      width: 300px;
-      height: 300px;
-      background: url('assets/img/gallery/bg-eye-care.png') no-repeat center center;
+      width: 400px;
+      height: 400px;
+      background: url('assets/img/gallery/bg-pattern.png') no-repeat;
       background-size: contain;
       opacity: 0.1;
     }
     
     .eye-care-content h2 {
-      font-size: 2.8rem;
-      margin-bottom: 30px;
+      font-size: 3.2rem;
+      margin-bottom: 35px;
     }
     
     .eye-care-content p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 40px;
       opacity: 0.9;
     }
     
     .eye-care-img {
       position: relative;
-      animation: pulse 4s ease-in-out infinite;
-      border-radius: 20px;
+      border-radius: 25px;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 30px 50px rgba(0,0,0,0.2);
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: var(--transition);
     }
     
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
+    .eye-care-img:hover {
+      transform: perspective(1000px) rotateY(0deg);
     }
     
     /* About */
     .about-content h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
+      font-size: 2.8rem;
+      margin-bottom: 35px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     
     .about-content p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
+      margin-bottom: 25px;
+      font-size: 1.15rem;
     }
     
     .about-img {
-      border-radius: 20px;
+      border-radius: 25px;
       overflow: hidden;
       box-shadow: var(--shadow);
       position: relative;
+      transform: perspective(1000px) rotateY(5deg);
+      transition: var(--transition);
+    }
+    
+    .about-img:hover {
+      transform: perspective(1000px) rotateY(0deg);
     }
     
     .about-img:before {
       content: '';
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 25px;
+      left: 25px;
       width: 100%;
       height: 100%;
-      border: 3px solid var(--primary);
-      border-radius: 20px;
+      border: 4px solid var(--primary);
+      border-radius: 25px;
       z-index: -1;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .testimonials:before {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: url('assets/img/gallery/bg-pattern.png') no-repeat;
+      background-size: contain;
+      opacity: 0.05;
+      z-index: 0;
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 35px;
+      margin: 20px;
+      position: relative;
+      transition: var(--transition);
+      transform: translateY(0);
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .testimonial-card:before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      font-size: 5rem;
+      font-family: Georgia, serif;
+      color: rgba(37, 166, 91, 0.1);
+      line-height: 1;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .testimonial-author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 3px solid var(--primary);
+    }
+    
+    .testimonial-author h5 {
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+    
+    .testimonial-author p {
+      color: var(--gray);
+      margin-bottom: 0;
+      font-size: 0.9rem;
     }
     
     /* Gallery */
     .gallery {
-      background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
     }
     
     .gallery-item {
       position: relative;
-      border-radius: 15px;
+      border-radius: 20px;
       overflow: hidden;
       margin-bottom: 30px;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      height: 300px;
+      height: 320px;
+      transform: scale(1);
     }
     
     .gallery-item img {
@@ -490,7 +639,7 @@
     }
     
     .gallery-item:hover {
-      transform: translateY(-10px);
+      transform: scale(1.03);
       box-shadow: var(--shadow-hover);
     }
     
@@ -504,7 +653,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(37, 166, 91, 0.8);
+      background: rgba(37, 166, 91, 0.85);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -518,14 +667,47 @@
     
     .gallery-item .overlay i {
       color: white;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+    }
+    
+    /* Appointment CTA */
+    .appointment-cta {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .appointment-cta:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('assets/img/gallery/bg-pattern.png') repeat;
+      opacity: 0.1;
+    }
+    
+    .appointment-cta h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    
+    .appointment-cta p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
     }
     
     /* Footer */
     .footer {
       background: var(--dark);
       color: white;
-      padding-top: 80px;
+      padding-top: 100px;
       position: relative;
     }
     
@@ -535,13 +717,13 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 6px;
       background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     }
     
     .footer-title {
-      font-size: 1.5rem;
-      margin-bottom: 25px;
+      font-size: 1.6rem;
+      margin-bottom: 30px;
       position: relative;
       padding-bottom: 15px;
     }
@@ -551,28 +733,30 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 50px;
-      height: 3px;
+      width: 60px;
+      height: 4px;
       background: var(--primary);
+      border-radius: 2px;
     }
     
     .footer-links li {
-      margin-bottom: 12px;
+      margin-bottom: 15px;
     }
     
     .footer-links a {
       color: #adb5bd;
       transition: var(--transition);
       text-decoration: none;
+      display: inline-block;
     }
     
     .footer-links a:hover {
       color: white;
-      padding-left: 5px;
+      transform: translateX(5px);
     }
     
     .footer-contact li {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       display: flex;
       align-items: flex-start;
     }
@@ -580,26 +764,28 @@
     .footer-contact i {
       color: var(--primary);
       margin-right: 15px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-top: 5px;
+      min-width: 25px;
     }
     
     .social-links {
       display: flex;
-      margin-top: 20px;
+      margin-top: 25px;
     }
     
     .social-links a {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 10px;
+      margin-right: 12px;
       color: white;
       transition: var(--transition);
+      font-size: 1.2rem;
     }
     
     .social-links a:hover {
@@ -608,36 +794,39 @@
     }
     
     .copyright {
-      padding: 25px 0;
-      background: rgba(0,0,0,0.2);
-      margin-top: 60px;
+      padding: 30px 0;
+      background: rgba(0,0,0,0.25);
+      margin-top: 80px;
       text-align: center;
       color: #adb5bd;
+      font-size: 0.95rem;
     }
     
     /* WhatsApp Button */
     .whatsapp-button {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
+      bottom: 35px;
+      right: 35px;
+      width: 65px;
+      height: 65px;
       background: #25D366;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 1.8rem;
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      font-size: 2rem;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
       z-index: 1000;
       transition: var(--transition);
       text-decoration: none;
+      animation: pulse 2s infinite;
     }
     
     .whatsapp-button:hover {
       transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+      animation: none;
     }
     
     /* Popup */
@@ -648,84 +837,132 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.85);
       z-index: 2000;
       align-items: center;
       justify-content: center;
+      backdrop-filter: blur(5px);
     }
     
     .popup-content {
       background: white;
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 500px;
+      padding: 50px;
+      border-radius: 25px;
+      max-width: 550px;
       width: 90%;
       position: relative;
-      animation: popupIn 0.4s ease-out;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      animation: popupIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      transform: scale(0.9);
+      opacity: 0;
     }
     
     @keyframes popupIn {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
     
     .close {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 1.8rem;
+      top: 25px;
+      right: 25px;
+      font-size: 2rem;
       color: var(--gray);
       cursor: pointer;
       transition: var(--transition);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
     }
     
     .close:hover {
       color: var(--primary);
+      background: rgba(37, 166, 91, 0.1);
     }
     
     /* Responsive */
+    @media (max-width: 1200px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+    }
+    
     @media (max-width: 992px) {
       .hero {
         min-height: auto;
-        padding: 120px 0 80px;
+        padding: 140px 0 100px;
         height: auto;
       }
       
       .hero h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
       }
       
       .section {
-        padding: 80px 0;
+        padding: 100px 0;
+      }
+      
+      .section-title h2 {
+        font-size: 2.5rem;
+      }
+      
+      .eye-care-content h2 {
+        font-size: 2.5rem;
       }
     }
     
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+      
+      .navbar-brand span {
+        font-size: 1.2rem;
+      }
+      
+      .stat-item {
+        margin-bottom: 30px;
+      }
+      
+      .about-content h2,
+      .eye-care-content h2 {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .section {
+        padding: 80px 0;
       }
       
       .section-title h2 {
         font-size: 2rem;
       }
       
-      .navbar-brand span {
-        font-size: 1.1rem;
+      .btn {
+        padding: 12px 25px;
+        font-size: 0.85rem;
       }
       
-      .stat-item {
-        margin-bottom: 30px;
-      }
-    }
-    
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .section {
-        padding: 60px 0;
+      .popup-content {
+        padding: 30px 20px;
       }
     }
   </style>
@@ -738,14 +975,16 @@
   </a>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="assets/img/gallery/logo.png" width="50" alt="logo" />
-        <span>Smiley Optical Services</span>
+        <div style="background: var(--gradient-primary); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-eye" style="color: white; font-size: 1.8rem;"></i>
+        </div>
+        <span>Smiley Optical</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -753,6 +992,7 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-3"><a class="btn btn-primary" role="button" onclick="openPopup()">Appointment</a></li>
         </ul>
@@ -768,18 +1008,20 @@
           <div class="hero-content">
             <h1>Experience <span>Clear Vision</span> with Our Expert Eye Care</h1>
             <p>Ready to prioritize your eye health? Schedule an appointment with our trusted team today. We are dedicated to providing personalized care, advanced screenings, and comprehensive eye examinations.</p>
-            <a class="btn btn-primary me-3" role="button" onclick="openPopup()">Book Appointment</a>
-            <a class="btn btn-outline-primary" href="#services">Our Services</a>
+            <div class="d-flex flex-wrap">
+              <a class="btn btn-primary me-3 mb-3" role="button" onclick="openPopup()">Book Appointment</a>
+              <a class="btn btn-outline-primary mb-3" href="#services">Our Services</a>
+            </div>
             
             <div class="row stats mt-5">
-              <div class="col-md-4">
+              <div class="col-md-4 mb-4 mb-md-0">
                 <div class="stat-item">
                   <i class="fas fa-user-md"></i>
                   <h3 class="counter" data-count="10">0</h3>
                   <p>Expert Optometrists</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mb-4 mb-md-0">
                 <div class="stat-item">
                   <i class="fas fa-eye"></i>
                   <h3 class="counter" data-count="2500">0</h3>
@@ -798,7 +1040,13 @@
         </div>
         <div class="col-lg-6">
           <div class="hero-img">
-            <img src="assets/img/gallery/hero.png" class="img-fluid" alt="Optometrist">
+            <div style="background: linear-gradient(45deg, #25a65b, #2c7df7); height: 500px; border-radius: 30px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; width: 100%; height: 100%; background: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop') center/cover; opacity: 0.9; mix-blend-mode: multiply;"></div>
+              <div class="text-center text-white p-4" style="position: relative; z-index: 2;">
+                <h3 style="font-size: 2.5rem; margin-bottom: 20px;">Vision Excellence</h3>
+                <p style="font-size: 1.2rem; max-width: 400px;">Your trusted partner for premium eye care solutions</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -806,7 +1054,7 @@
   </section>
 
   <!-- Services Section -->
-  <section class="section departments" id="services">
+  <section class="section services" id="services">
     <div class="container">
       <div class="section-title">
         <h2>Our Services</h2>
@@ -815,48 +1063,48 @@
       
       <div class="row">
         <div class="col-md-6 col-lg-3 mb-4">
-          <div class="dept-card">
-            <div class="dept-icon">
-              <img src="assets/img/icons/eye-care.png" alt="Eye Care">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-eye"></i>
             </div>
-            <h3 class="dept-title">Eye Health Checkups</h3>
-            <div class="dept-content">
+            <h3 class="service-title">Eye Health Checkups</h3>
+            <div class="service-content">
               <p>Comprehensive eye examinations to detect and prevent vision problems early.</p>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 col-lg-3 mb-4">
-          <div class="dept-card">
-            <div class="dept-icon">
-              <img src="assets/img/icons/eye-care.png" alt="Contact Lens">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-glasses"></i>
             </div>
-            <h3 class="dept-title">Contact Lens</h3>
-            <div class="dept-content">
+            <h3 class="service-title">Contact Lens</h3>
+            <div class="service-content">
               <p>Professional fitting for all types of contact lenses with personalized guidance.</p>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 col-lg-3 mb-4">
-          <div class="dept-card">
-            <div class="dept-icon">
-              <img src="assets/img/icons/eye-care.png" alt="Eyeglasses">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-glasses"></i>
             </div>
-            <h3 class="dept-title">Optical Frames</h3>
-            <div class="dept-content">
+            <h3 class="service-title">Optical Frames</h3>
+            <div class="service-content">
               <p>Wide selection of stylish frames to match your personality and lifestyle.</p>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 col-lg-3 mb-4">
-          <div class="dept-card">
-            <div class="dept-icon">
-              <img src="assets/img/icons/eye-care.png" alt="Insurance">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-file-invoice-dollar"></i>
             </div>
-            <h3 class="dept-title">Health Insurance</h3>
-            <div class="dept-content">
+            <h3 class="service-title">Health Insurance</h3>
+            <div class="service-content">
               <p>We accept most insurance plans to make quality eye care accessible.</p>
             </div>
           </div>
@@ -866,12 +1114,17 @@
   </section>
 
   <!-- Eye Care Section -->
-  <section class="section eye-care">
+  <section class="eye-care">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="eye-care-img">
-            <img src="assets/img/gallery/eye-care.png" class="img-fluid" alt="Eye Care">
+            <div style="background: linear-gradient(45deg, #1a5a38, #1e5bb8); height: 450px; border-radius: 25px; display: flex; align-items: center; justify-content: center;">
+              <div class="text-center text-white p-4">
+                <h3 style="font-size: 2.2rem; margin-bottom: 20px;">Advanced Eye Care Technology</h3>
+                <p style="font-size: 1.1rem; max-width: 400px;">State-of-the-art equipment for precise diagnostics and treatment</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-6">
@@ -904,7 +1157,9 @@
       <div class="row align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="about-img">
-            <img src="assets/img/gallery/health-care.png" class="img-fluid" alt="About Us">
+            <div style="background: linear-gradient(45deg, #25a65b, #2c7df7); height: 500px; border-radius: 25px; display: flex; align-items: flex-end; overflow: hidden;">
+              <div style="background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop') center/cover; width: 100%; height: 90%;"></div>
+            </div>
           </div>
         </div>
         <div class="col-lg-6">
@@ -914,6 +1169,57 @@
             <p>We are an in-network provider for National Health Insurance Scheme (NHIS) and some Health Maintenance Organizations (HMO). Smiley Optical Services work with many health insurance providers to ensure good eye health and vision care for all of our patients.</p>
             <p>We have a retainership with NMDPRA Nigerian Midstream and Downstream Petroleum Agency, Amcon and also signed up with a number of Health Management Organization (HMO) including: Avon, Axa Mansard, Hygeia, Total Health Trust, Venus Medicare, Mediplan, Precious Health, Reliance, Songhia, United Health Care, NNPC, Fountain, Leadway, Wellness, Aman, Prepaid, MB &O, Routhage, Hallmark, and more.</p>
             <p>If you have other types of coverage that are not listed here, contact us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Client Testimonials</h2>
+        <p>Hear what our satisfied patients say about our services</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"The team at Smiley Optical transformed my vision and my life. After years of struggling with contacts, they found the perfect solution for me. Professional and caring service!"</p>
+            <div class="testimonial-author">
+              <div style="background: #25a65b; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem;">AO</div>
+              <div>
+                <h5>Amaka Okafor</h5>
+                <p>Patient for 3 years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"I've been coming to Smiley Optical for my annual checkups for the past 5 years. Their attention to detail and state-of-the-art equipment always impress me."</p>
+            <div class="testimonial-author">
+              <div style="background: #2c7df7; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem;">CJ</div>
+              <div>
+                <h5>Chinedu Johnson</h5>
+                <p>Business Executive</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"The staff went above and beyond to help me find the perfect frames. They took the time to understand my style and needs. Best optical experience I've ever had!"</p>
+            <div class="testimonial-author">
+              <div style="background: #ff6b35; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem;">BE</div>
+              <div>
+                <h5>Bola Emmanuel</h5>
+                <p>Fashion Designer</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -931,7 +1237,7 @@
       <div class="row">
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/covid-19.jpg" alt="Frame 1">
+            <div style="background: linear-gradient(45deg, #8e8e93, #a5a5a7); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -940,7 +1246,7 @@
         
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/laboratories.jpg" alt="Frame 2">
+            <div style="background: linear-gradient(45deg, #5d5d5f, #7d7d7f); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -949,7 +1255,7 @@
         
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/nicotine.jpg" alt="Frame 3">
+            <div style="background: linear-gradient(45deg, #1a1a1c, #3a3a3c); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -958,7 +1264,7 @@
         
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/treatment.jpg" alt="Frame 4">
+            <div style="background: linear-gradient(45deg, #c9b458, #d9c878); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -967,7 +1273,7 @@
         
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/treatment2.jpg" alt="Frame 5">
+            <div style="background: linear-gradient(45deg, #3498db, #5dade2); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -976,7 +1282,7 @@
         
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/26.jpg" alt="Frame 6">
+            <div style="background: linear-gradient(45deg, #e74c3c, #ec7063); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -985,7 +1291,7 @@
         
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/23.jpg" alt="Frame 7">
+            <div style="background: linear-gradient(45deg, #2ecc71, #58d68d); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -994,13 +1300,22 @@
         
         <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
           <div class="gallery-item">
-            <img src="assets/img/gallery/37.jpg" alt="Frame 8">
+            <div style="background: linear-gradient(45deg, #9b59b6, #af7ac5); height: 320px; border-radius: 20px;"></div>
             <div class="overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Appointment CTA -->
+  <section class="appointment-cta">
+    <div class="container">
+      <h2>Ready for Clearer Vision?</h2>
+      <p>Book your appointment today and experience premium eye care from our expert optometrists</p>
+      <a class="btn btn-light btn-lg" role="button" onclick="openPopup()">Schedule Appointment</a>
     </div>
   </section>
 
@@ -1022,12 +1337,12 @@
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h3 class="footer-title">Our Locations</h3>
           <ul class="footer-links">
-            <li>
+            <li class="mb-4">
               <h5>Lagos Office</h5>
               <p>92, Adeniran Ogunsanya street Surulere, Lagos</p>
               <p>08164589323, 014545314</p>
             </li>
-            <li class="mt-3">
+            <li>
               <h5>Abuja Office</h5>
               <p>Suite 14, Yasuha Plaza, plot 1046 Adetokunbo Ademola Crecent Wuse II Abuja</p>
               <p>07082332610, 092900 470, 08051728840</p>
@@ -1038,14 +1353,14 @@
         <div class="col-lg-4">
           <h3 class="footer-title">Contact Us</h3>
           <ul class="footer-contact">
-            <li>
+            <li class="mb-4">
               <i class="fas fa-envelope"></i>
               <div>
                 <h5>Email</h5>
                 <p>smileey40@gmail.com, smileey40@yahoo.com</p>
               </div>
             </li>
-            <li>
+            <li class="mb-4">
               <i class="fas fa-phone"></i>
               <div>
                 <h5>Phone</h5>
@@ -1099,19 +1414,21 @@
     // Popup functions
     function openPopup() {
       document.getElementById('popup').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
 
     function closePopup() {
       document.getElementById('popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
     
     // Close popup when clicking outside
-    window.onclick = function(event) {
+    window.addEventListener('click', function(event) {
       const popup = document.getElementById('popup');
       if (event.target === popup) {
         closePopup();
       }
-    };
+    });
     
     // Counter animation
     document.addEventListener('DOMContentLoaded', function() {
@@ -1128,7 +1445,7 @@
             counter.innerText = Math.ceil(count + increment);
             setTimeout(updateCount, 10);
           } else {
-            counter.innerText = target;
+            counter.innerText = target.toLocaleString();
           }
         };
         
@@ -1150,11 +1467,9 @@
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {
-        navbar.style.padding = '10px 0';
-        navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+        navbar.classList.add('navbar-scrolled');
       } else {
-        navbar.style.padding = '20px 0';
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        navbar.classList.remove('navbar-scrolled');
       }
     });
     
@@ -1169,7 +1484,7 @@
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (pageYOffset >= (sectionTop - 100)) {
+        if (pageYOffset >= (sectionTop - 150)) {
           current = section.getAttribute('id');
         }
       });
@@ -1181,8 +1496,9 @@
         }
       });
     });
+    
+    // Initialize on load
+    window.dispatchEvent(new Event('scroll'));
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
