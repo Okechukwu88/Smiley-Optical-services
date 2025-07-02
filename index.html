@@ -783,13 +783,13 @@
     <div class="row align-items-center">
       <!-- Text Content -->
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="hero-content position: relative" >
-          <div class="badge-overlay position-absolute bg-light text-primary px-4 py-2 rounded-pill fw-semibold shadow-sm">
-  <i class="bi bi-shield-check me-2"></i> Trusted Care
-</div>
-
+        <div class="hero-content">
+          <h1 class="display-4 fw-bold mb-4">
+            Experience <span class="text-primary position-relative">Clear Vision</span> <br>
+            with Expert Eye Care
+          </h1>
           <p class="lead text-muted mb-4">
-            Prioritize your eye health with personalized care, advanced screenings, and comprehensive eye exams. All tailored to your vision needs.
+            Prioritize your eye health with personalized care, advanced screenings, and comprehensive eye exams — all tailored to your vision needs.
           </p>
           <div class="d-flex flex-wrap gap-3">
             <a class="btn btn-primary btn-lg shadow-sm" role="button" onclick="openPopup()">Book Appointment</a>
@@ -802,10 +802,10 @@
       <div class="col-lg-6 text-center">
         <div class="hero-img position-relative">
           <img src="assets/img/gallery/hero.png" class="img-fluid rounded-4 shadow" alt="Optometrist">
-          <div class="badge-overlay position-absolute bg-light text-primary px-4 py-2 rounded-pill fw-semibold shadow-sm d-none d-sm-inline-block">
-  <i class="bi bi-shield-check me-2"></i> Trusted Care
-</div>
-
+          <!-- Only ONE badge inside image box -->
+          <div class="badge-overlay position-absolute bg-light text-primary px-4 py-2 rounded-pill fw-semibold shadow-sm">
+            <i class="bi bi-shield-check me-2"></i> Trusted Care
+          </div>
         </div>
       </div>
     </div>
@@ -814,7 +814,6 @@
   <!-- Decorative Background Element -->
   <div class="position-absolute w-100 h-100 top-0 start-0" style="z-index: -1; background: linear-gradient(135deg, rgba(37,166,91,0.05), rgba(44,125,247,0.03));"></div>
 </section>
-
 
   <!-- Services Section -->
   <section class="section departments" id="services">
