@@ -728,6 +728,23 @@
         padding: 60px 0;
       }
     }
+
+    .badge-overlay {
+  top: 20px;
+  left: 20px;
+  font-size: 0.9rem;
+}
+
+/* Adjust for extra small screens (under 576px) */
+@media (max-width: 575.98px) {
+  .badge-overlay {
+    font-size: 0.8rem;
+    top: 10px;
+    left: 10px;
+    padding: 6px 12px;
+  }
+}
+
   </style>
 </head>
 
@@ -785,9 +802,10 @@
       <div class="col-lg-6 text-center">
         <div class="hero-img position-relative">
           <img src="assets/img/gallery/hero.png" class="img-fluid rounded-4 shadow" alt="Optometrist">
-          <div class="position-absolute top-0 start-0 translate-middle bg-primary-subtle p-2 px-4 rounded-pill text-primary fw-semibold" style="top: 5%; left: 5%; font-size: 0.9rem;">
-            Trusted Care Since 2010
-          </div>
+          <div class="badge-overlay position-absolute bg-light text-primary px-4 py-2 rounded-pill fw-semibold shadow-sm d-none d-sm-inline-block">
+  <i class="bi bi-shield-check me-2"></i> Trusted Care Since 2010
+</div>
+
         </div>
       </div>
     </div>
