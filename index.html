@@ -761,49 +761,42 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="hero-content">
-            <h1>Experience <span>Clear Vision</span> with Our Expert Eye Care</h1>
-            <p>Ready to prioritize your eye health? Schedule an appointment with our trusted team today. We are dedicated to providing personalized care, advanced screenings, and comprehensive eye examinations.</p>
-            <a class="btn btn-primary me-3" role="button" onclick="openPopup()">Book Appointment</a>
-            <a class="btn btn-outline-primary" href="#services">Our Services</a>
-            
-            <div class="row stats mt-5">
-              <div class="col-md-4">
-                <div class="stat-item">
-                  <i class="fas fa-user-md"></i>
-                  <h3 class="counter" data-count="10">0</h3>
-                  <p>Expert Optometrists</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="stat-item">
-                  <i class="fas fa-eye"></i>
-                  <h3 class="counter" data-count="2500">0</h3>
-                  <p>Patients Served</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="stat-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <h3 class="counter" data-count="3">0</h3>
-                  <p>Locations</p>
-                </div>
-              </div>
-            </div>
+<section class="hero position-relative d-flex align-items-center" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Content -->
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="hero-content">
+          <h1 class="display-4 fw-bold mb-4">
+            Experience <span class="text-primary position-relative">Clear Vision</span> <br>
+            with Expert Eye Care
+          </h1>
+          <p class="lead text-muted mb-4">
+            Prioritize your eye health with personalized care, advanced screenings, and comprehensive eye exams — all tailored to your vision needs.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-primary btn-lg shadow-sm" role="button" onclick="openPopup()">Book Appointment</a>
+            <a class="btn btn-outline-primary btn-lg" href="#services">Explore Services</a>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="hero-img">
-            <img src="assets/img/gallery/hero.png" class="img-fluid" alt="Optometrist">
+      </div>
+
+      <!-- Hero Image -->
+      <div class="col-lg-6 text-center">
+        <div class="hero-img position-relative">
+          <img src="assets/img/gallery/hero.png" class="img-fluid rounded-4 shadow" alt="Optometrist">
+          <div class="position-absolute top-0 start-0 translate-middle bg-primary-subtle p-2 px-4 rounded-pill text-primary fw-semibold" style="top: 5%; left: 5%; font-size: 0.9rem;">
+            Trusted Care Since 2010
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Decorative Background Element -->
+  <div class="position-absolute w-100 h-100 top-0 start-0" style="z-index: -1; background: linear-gradient(135deg, rgba(37,166,91,0.05), rgba(44,125,247,0.03));"></div>
+</section>
+
 
   <!-- Services Section -->
   <section class="section departments" id="services">
